@@ -16,7 +16,7 @@
 */
 $servername=filter_input(INPUT_SERVER, 'SERVER_NAME');
 $port=filter_input(INPUT_SERVER, 'SERVER_PORT');
-$config['base_url'] = 'http://localhost/fufsvn/';
+$config['base_url'] = 'http://localhost/fuftv/';
 
 /*
 if(isset($_SERVER['HTTP_HOST'])) {
