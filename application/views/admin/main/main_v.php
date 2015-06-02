@@ -36,6 +36,14 @@
 		</div>
 		<?php endif ?>
 		<div class="col-md-3 pd-rl">
+			<a href="<?php echo base_url()?>admin/myepisode">
+				<div class="halutbtn">
+					<i class="fa fa-list"></i>
+					<div class="subhalutbtn">My Episode</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-3 pd-rl">
 			<a href="<?php echo base_url()?>admin/kategori">
 				<div class="halutbtn">
 					<i class="fa fa-tag"></i>
