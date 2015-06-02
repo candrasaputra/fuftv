@@ -170,7 +170,7 @@ class Episode extends MY_Controller {
         $data = array(
                 'idfilm'        => $post['idfilm'],
                 'jdleps'        => $post['jdleps'],
-'alias' 	    => strtolower(url_title($post['jdlfilm'].' '.$post['jdleps'].' '.'Subtitle Indonesia')),
+                'alias' 	    => strtolower(url_title($post['jdlfilm'].' '.$post['jdleps'].' '.'Subtitle Indonesia')),
                 'deseps'        => $post['deseps'],
                 'iduser'        => $this->session->userdata('c_id'),
                 'visibility'    => $post['visibility'],

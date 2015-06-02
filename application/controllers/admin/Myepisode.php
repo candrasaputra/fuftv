@@ -109,6 +109,25 @@ class Myepisode extends MY_Controller {
         }
     }
 
+    public function delete(){
+        $id = $_POST['idepisode'];
+        $idfilm = $_POST['idfilm'];
+        if ($this->session->userdata('c_id') == $this->Myepisode_m->get_iduser_episode($id)) {
+            $file = $this->Myepisode_m->get_episode_by_row($id)->row('imgeps');
+
+            if ($file != "default.jpg") {
+                unlink("asset/img/epsimage/$file");
+            }
+
+            $this->Myepisode_m->delete_episode($id);
+
+            redirect(base_url('admin/film/detailfilm/'.$idfilm));
+        }else{
+            $this->session->set_flashdata('critical', 'Anda Tidak Memiliki Hak Untuk Melakukan Aksi Ini');
+            redirect(base_url('admin/film/detailfilm/'.$idfilm));
+        }
+    }
+
     public function delete_from_listepisode($id){
         if ($this->session->userdata('c_id') == $this->Myepisode_m->get_iduser_episode($id)) {
             $idfilm = $_POST['idfilm'];
@@ -122,7 +141,7 @@ class Myepisode extends MY_Controller {
             $this->Myepisode_m->delete_episode($id);
             $this->session->set_flashdata('success', 'Delete Success');
             redirect(base_url('admin/myepisode/'));
-        } else {
+        }else{
             $this->session->set_flashdata('critical', 'Anda Tidak Memiliki Hak Untuk Melakukan Aksi Ini');
             redirect('admin/myepisode','refresh');
         }

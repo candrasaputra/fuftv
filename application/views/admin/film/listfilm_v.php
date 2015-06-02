@@ -43,7 +43,7 @@
 					<td class="tengah"><?php echo $allfilm->statusfilm; ?></td>
 					<td class="tengah"><?php echo $allfilm->airedfilm; ?></td>
 					<td class="tengah">
-						<a href="<?php echo base_url('admin/episode/addepisode/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="tambah episode"><i class="fa fa-plus"></i></a>
+						<a href="<?php echo base_url('admin/myepisode/addepisode/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="tambah episode"><i class="fa fa-plus"></i></a>
 						<a href="<?php echo base_url('admin/film/editfilm/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
 						<?php if ($this->account->validate_admin()): ?>
 						<a href="<?php echo base_url('admin/film/deletefilm/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>

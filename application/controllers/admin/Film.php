@@ -9,6 +9,7 @@ class Film extends MY_Controller {
         $this->load->model('admin/film_m');
         $this->load->library('timeago');
         $this->load->library('resize');
+        $this->load->model('admin/Myepisode_m');
     }
 
     public function index(){

@@ -1,4 +1,16 @@
 <div class="col-md-8 pd-rl bts-ats">
+	<?php if ($this->session->flashdata('critical')): ?>
+	<div align="center" class="alert alert-danger alert-dismissible bts-bwh" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong><?php echo $this->session->flashdata('critical');?></strong>
+	</div>
+	<?php endif ?>
+	<?php if ($this->session->flashdata('success')): ?>
+		<div align="center" class="alert alert-success alert-dismissible bts-bwh" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<strong><?php echo $this->session->flashdata('success');?></strong>
+		</div>
+	<?php endif ?>
 	<div class="pop-row">
 		<div class="col-md-4 pd-rl">
 			<div class="detailfim-dec bdr1"><a href="<?php echo base_url('admin/film/editfilm/'.$admdetaillist->idfilm); ?>" class="btn btn-danger btn-lg" style="width:100%;"><b>Edit Preview</b></a></div>
@@ -105,7 +117,7 @@
 	<div class="col-md-12 paddingnone"></div>
 	<div class="media-box">
 		<div class="kiri"><div class="detailfim-jdl">List Episode</div></div>
-		<div class="kanan"><div class="detailfim-jdl txt-list text-kanan bts-ats"><a href="<?php echo base_url('admin/episode/addepisode/'.$admdetaillist->idfilm); ?>" class="btn btn-danger"><b>Tambah episode</b></a></div></div>
+		<div class="kanan"><div class="detailfim-jdl txt-list text-kanan bts-ats"><a href="<?php echo base_url('admin/myepisode/addepisode/'.$admdetaillist->idfilm); ?>" class="btn btn-danger"><b>Tambah episode</b></a></div></div>
 		<div class="sambungfloat"></div>
 	</div>
 	<!--list episode-->
@@ -124,14 +136,15 @@
 					<div class="sambungfloat"></div>
 				</div>
 				<div class="kanan txt-list">
+					<?php if ($this->session->userdata('c_id') == $this->Myepisode_m->get_iduser_episode($le->idepisode)): ?>
+					<a href="<?php echo base_url();?>admin/myepisode/edit/<?php echo "$le->idepisode"; ?>/<?php echo $admdetaillist->idfilm; ?>"><button>Edit</button></a>
 					
-					<a href="<?php echo base_url();?>admin/episode/edit/<?php echo "$le->idepisode"; ?>/<?php echo $admdetaillist->idfilm; ?>"><button>Edit</button></a>
-					
-					<form method="POST" action="<?php echo base_url();?>admin/episode/delete/">
+					<form method="POST" action="<?php echo base_url();?>admin/myepisode/delete/">
 						<input type="hidden" name="idepisode" value="<?php echo $le->idepisode; ?>" />
 						<input type="hidden" name="idfilm" value="<?php echo $admdetaillist->idfilm; ?>" />
 						<button>Hapus</button>
 					</form>
+					<?php endif ?>
 				</div>
 				<div class="sambungfloat"></div>
 			</div>
