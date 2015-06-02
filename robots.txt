@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /admin/
+
+Allow: [the URL path in of a subdirectory, within a blocked parent directory, that you want to unblock]
