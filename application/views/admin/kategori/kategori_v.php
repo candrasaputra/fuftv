@@ -33,8 +33,11 @@
 					<div class="ttl-adm-list-50"><?php echo $n->deskat; ?></div>
 					<div class="ttl-adm-list-10"><?php echo $this->kategori_m->count_kategori_film($n->idkategori) ?></div>
 					<div class="ttl-adm-list-10 ttl-adm-act">
-						<a href="#" class="edit" data-toggle="modal" data-id="<?php echo $n->idkategori; ?>" data-target="#editkate">edit</a> | 
-						<a href="<?php echo base_url('admin/kategori/deletekat/'.$n->idkategori); ?>">hapus</a>
+						<a href="#" class="edit" data-toggle="modal" data-id="<?php echo $n->idkategori; ?>" data-target="#editkate">edit</a>
+						<?php if ($this->account->validate_admin()): ?>
+						 | 
+						<a href="<?php echo base_url('admin/kategori/deletekat/'.$n->idkategori); ?>">hapus</a>						
+						<?php endif ?>
 					</div>
 					<div class="sambungfloat"></div>
 				</li>

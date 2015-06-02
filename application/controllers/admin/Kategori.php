@@ -30,8 +30,12 @@ class Kategori extends MY_Controller{
         redirect(base_url('admin/kategori'));
     }
     public function deletekat($id){
-        $this->kategori_m->delete_kategori($id);
-        redirect('admin/kategori','refresh');
+        if(!$this->account->validate_admin()){
+            show_404();
+        }else{
+            $this->kategori_m->delete_kategori($id);
+            redirect('admin/kategori','refresh');
+        }
     }
 
     public function updatekategori(){

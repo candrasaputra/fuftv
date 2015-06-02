@@ -32,8 +32,11 @@
 					<div class="ttl-adm-list-50"><?php echo $n->destag; ?></div>
 					<div class="ttl-adm-list-10"><?php echo $this->tag_m->count_tag_film($n->idtag) ?></div>
 					<div class="ttl-adm-list-10 ttl-adm-act">
-						<a href="#" class="edit" data-toggle="modal" data-id="<?php echo $n->idtag; ?>" data-target="#edittage">edit</a> |
-						<a href="<?php echo base_url('admin/tag/deletetag/'.$n->idtag); ?>">hapus</a>
+						<a href="#" class="edit" data-toggle="modal" data-id="<?php echo $n->idtag; ?>" data-target="#edittage">edit</a>
+						<?php if ($this->account->validate_admin()): ?>
+						 | 
+						<a href="<?php echo base_url('admin/tag/deletetag/'.$n->idtag); ?>">hapus</a>					
+						<?php endif ?>
 					</div>
 					<div class="sambungfloat"></div>
 				</li>

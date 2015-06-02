@@ -28,9 +28,13 @@ class Tag extends MY_Controller{
         redirect(base_url('admin/tag'));
     }
     public function deletetag($id){
-        $this->tag_m->delete_relasi_tag($id);
-        $this->tag_m->delete_tag($id);
-        redirect('admin/tag','refresh');
+        if(!$this->account->validate_admin()){
+            show_404();
+        }else{
+            $this->tag_m->delete_relasi_tag($id);
+            $this->tag_m->delete_tag($id);
+            redirect('admin/tag','refresh');
+        }
     }
     public function updatetag(){
                 
