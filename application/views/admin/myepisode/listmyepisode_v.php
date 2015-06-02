@@ -3,6 +3,18 @@
 	<div class="sambungfloat"></div>
 </div>
 <hr style="margin-top:11px;" />
+<?php if ($this->session->flashdata('critical')): ?>
+	<div align="center" class="alert alert-danger alert-dismissible bts-bwh" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong><?php echo $this->session->flashdata('critical');?></strong>
+	</div>
+<?php endif ?>
+<?php if ($this->session->flashdata('success')): ?>
+	<div align="center" class="alert alert-success alert-dismissible bts-bwh" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong><?php echo $this->session->flashdata('success');?></strong>
+	</div>
+<?php endif ?>
 <ul class="nav nav-tabs">
     <li class="active"><a href="#All" data-toggle="tab">All  <span class="badge"><?php echo count($listepisode); ?></span></a></li>
     
@@ -63,14 +75,14 @@
 										<i class="<?php if($allfilm->visibility == 'publish'){echo("fa fa-eye");}elseif($allfilm->visibility == 'berjadwal'){echo("glyphicon glyphicon-time");}else{echo("fa fa-eye-slash");}?>"></i> <?php echo $allfilm->visibility?>		                            <span class="caret"></span>
 		                            </button>
 		                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
 		                            </ul>
 		                        </div>
 							</td>
 							<td class="tengah">
-								<a href="<?php echo base_url('admin/episode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
-								<a href="<?php echo base_url('admin/episode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 					<?php endforeach ?>
@@ -121,14 +133,14 @@
 										<i class="<?php if($allfilm->visibility == 'publish'){echo("fa fa-eye");}elseif($allfilm->visibility == 'berjadwal'){echo("glyphicon glyphicon-time");}else{echo("fa fa-eye-slash");}?>"></i> <?php echo $allfilm->visibility?>		                            <span class="caret"></span>
 		                            </button>
 		                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
 		                            </ul>
 		                        </div>
 							</td>
 							<td class="tengah">
-								<a href="<?php echo base_url('admin/episode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
-								<a href="<?php echo base_url('admin/episode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 					<?php endforeach ?>
@@ -179,14 +191,14 @@
 										<i class="<?php if($allfilm->visibility == 'publish'){echo("fa fa-eye");}elseif($allfilm->visibility == 'berjadwal'){echo("glyphicon glyphicon-time");}else{echo("fa fa-eye-slash");}?>"></i> <?php echo $allfilm->visibility?>		                            <span class="caret"></span>
 		                            </button>
 		                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
 		                            </ul>
 		                        </div>
 							</td>
 							<td class="tengah">
-								<a href="<?php echo base_url('admin/episode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
-								<a href="<?php echo base_url('admin/episode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 					<?php endforeach ?>
@@ -238,14 +250,14 @@
 		                            <span class="caret"></span>
 		                            </button>
 		                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
-		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/episode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/publish/<?php echo $allfilm->idepisode; ?>">Publish</a></li>
+		                              <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url()?>admin/myepisode/draff/<?php echo $allfilm->idepisode; ?>">Draff</a></li>
 		                            </ul>
 		                        </div>
 							</td>
 							<td class="tengah">
-								<a href="<?php echo base_url('admin/episode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
-								<a href="<?php echo base_url('admin/episode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/edit/'.$allfilm->idepisode.'/'.$allfilm->idfilm); ?>" class="btn btn-default listbtnadm" title="edit film"><i class="fa fa-pencil-square"></i></a>
+								<a href="<?php echo base_url('admin/myepisode/delete_from_listepisode/'.$allfilm->idepisode); ?>" class="btn btn-default listbtnadm" title="hapus"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 					<?php endforeach ?>
