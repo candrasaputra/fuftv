@@ -25,6 +25,7 @@
 				</div>
 			</a>
 		</div>
+		<?php if ($this->account->validate_admin()): ?>
 		<div class="col-md-3 pd-rl">
 			<a href="<?php echo base_url()?>admin/Episode">
 				<div class="halutbtn">
@@ -33,6 +34,7 @@
 				</div>
 			</a>
 		</div>
+		<?php endif ?>
 		<div class="col-md-3 pd-rl">
 			<a href="<?php echo base_url()?>admin/kategori">
 				<div class="halutbtn">

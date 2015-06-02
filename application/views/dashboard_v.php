@@ -113,6 +113,7 @@
 								<div class="sambungfloat"></div>
 							</div>
 						</a>
+						<?php if ($this->account->validate_admin()): ?>
 						<a href="<?php echo base_url()?>admin/Episode">
 							<div class="aside-menu">
 								<div class="col-md-1 paddingnone"><i class="fa fa-list"></i></div>
@@ -121,6 +122,7 @@
 								<div class="sambungfloat"></div>
 							</div>
 						</a>
+						<?php endif ?>
 						<a href="<?php echo base_url()?>admin/kategori">
 							<div class="aside-menu">
 								<div class="col-md-1 paddingnone"><i class="fa  fa-tag"></i></div>
@@ -138,16 +140,15 @@
 							</div>
 						</a>
 						<?php if ($this->account->validate_admin()): ?>
-							<a href="<?php echo base_url()?>admin/user">
-								<div class="aside-menu">
-									<div class="col-md-1 paddingnone"><i class="fa fa-user-plus"></i></div>
-									<div class="col-md-9 pd-rl fs-12">User</div>
-									<div class="col-md-2 paddingnone text-kanan"><i class="fa fa-caret-right"></i></div>
-									<div class="sambungfloat"></div>
-								</div>
-							</a>
+						<a href="<?php echo base_url()?>admin/user">
+							<div class="aside-menu">
+								<div class="col-md-1 paddingnone"><i class="fa fa-user-plus"></i></div>
+								<div class="col-md-9 pd-rl fs-12">User</div>
+								<div class="col-md-2 paddingnone text-kanan"><i class="fa fa-caret-right"></i></div>
+								<div class="sambungfloat"></div>
+							</div>
+						</a>
 						<?php endif ?>
-
 						<a href="<?php echo base_url()?>admin/setting">
 							<div class="aside-menu">
 								<div class="col-md-1 paddingnone"><i class="fa fa-code"></i></div>

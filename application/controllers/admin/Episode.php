@@ -7,6 +7,10 @@ class Episode extends MY_Controller {
         $this->load->model('admin/episode_m');
         $this->load->library('resize');
         date_default_timezone_set("Asia/Jakarta");
+
+        if(!$this->account->validate_admin()){
+            show_404();
+        }
     }
 
     public function index()
