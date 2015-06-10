@@ -64,7 +64,6 @@ class Main_m extends CI_Model {
 	public function get_episode_film($detail){
 		$this->db->where('visibility', "publish");
 		$this->db->where('idfilm',$detail);
-		$this->db->order_by("jdleps", "asc");
 		$sdf = $this->db->get('episode');
 		return $sdf->result();
 	}
